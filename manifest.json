@@ -1,0 +1,21 @@
+{
+  "short_name": "Hela",
+  "name": "Hela development",
+  "icons": [
+    {
+      "src": "./assets/icon/192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "./assets/icon/512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "./?source=pwa",
+  "background_color": "#08FFA6",
+  "theme_color": "#000a12",
+  "display": "standalone",
+  "scope": "./"
+}
