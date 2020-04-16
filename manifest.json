@@ -43,7 +43,7 @@
    "density": "3.0"
   }
 ],
-  "start_url": "./?source=pwa",
+  "start_url": "./?utm_source=heladev&utm_medium=pwa&utm_campaign=progressive-web-app",
   "background_color": "#08FFA6",
   "theme_color": "#000a12",
   "display": "standalone",
