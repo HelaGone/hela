@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', event => {
   let displayMode = 'browser tab';
   let deferredPrompt;
+  let btnDownload = document.getElementById('btn_download');
+  btnDownload.style.display = 'none';
   if('serviceWorker' in navigator){
     navigator.serviceWorker.register('./sw.js').then(registration => {
     }, error => {
@@ -11,6 +13,31 @@ document.addEventListener('DOMContentLoaded', event => {
   window.addEventListener('beforeinstallprompt', (e)=>{
     e.preventDefault();
     deferredPrompt = e;
+
+    btnDownload.style.display = 'inline-block';
+
+    btnDownload.addEventListener('click', (e) => {
+      //hide button
+      btnDownload.style.display = 'none';
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.then((choice) => {
+        if(choice.outcome === 'accepted'){
+          gtag('event', 'accepted', {
+            'event_category': 'pwa',
+            'event_label': 'accept',
+            'value': 'true'
+          });
+        }else{
+          gtag('event', 'dismissed', {
+            'event_category': 'pwa',
+            'event_label': 'dismiss',
+            'value': 'true'
+          });
+        }
+        deferredPrompt = null;
+      })
+    });
+
     // console.log("event: ", e);
   });
 
@@ -44,24 +71,5 @@ document.addEventListener('DOMContentLoaded', event => {
     'value': displayMode
   });
 
-  let btnDownload = document.getElementById('btn_download');
-  btnDownload.addEventListener('click', (e) => {
-    deferredPrompt.prompt();
-    deferredPrompt.userChoice.then((choice) => {
-      if(choice.outcome === 'accepted'){
-        gtag('event', 'accepted', {
-          'event_category': 'pwa',
-          'event_label': 'accept',
-          'value': 'true'
-        });
-      }else{
-        gtag('event', 'dismissed', {
-          'event_category': 'pwa',
-          'event_label': 'dismiss',
-          'value': 'true'
-        });
-      }
-    })
-  });
 
 });
