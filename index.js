@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', event => {
   let deferredPrompt;
   let btnDownload = document.getElementById('btn_download');
   btnDownload.style.display = 'none';
+
+  //INSTALL SERVICE WORKER
   if('serviceWorker' in navigator){
     navigator.serviceWorker.register('./sw.js').then(registration => {
     }, error => {
@@ -10,6 +12,15 @@ document.addEventListener('DOMContentLoaded', event => {
     })
   }
 
+  const updateOnlineStatus = (event) => {
+    let condition = navigator.onLine ? 'online' : 'offline';
+    console.log(condition);
+  }
+
+  window.addEventListener('online', updateOnlineStatus);
+  window.addEventListener('offline', updateOnlineStatus);
+
+  //ADD 2 HOME SCREEN LOGIC
   window.addEventListener('beforeinstallprompt', (e)=>{
     e.preventDefault();
     deferredPrompt = e;
@@ -22,34 +33,34 @@ document.addEventListener('DOMContentLoaded', event => {
       deferredPrompt.prompt();
       deferredPrompt.userChoice.then((choice) => {
         if(choice.outcome === 'accepted'){
-          gtag('event', 'accepted', {
-            'event_category': 'pwa',
-            'event_label': 'accept',
-            'value': 'true'
-          });
+          // gtag('event', 'accepted', {
+          //   'event_category': 'pwa',
+          //   'event_label': 'accept',
+          //   'value': 'true'
+          // });
         }else{
-          gtag('event', 'dismissed', {
-            'event_category': 'pwa',
-            'event_label': 'dismiss',
-            'value': 'true'
-          });
+          // gtag('event', 'dismissed', {
+          //   'event_category': 'pwa',
+          //   'event_label': 'dismiss',
+          //   'value': 'true'
+          // });
         }
         deferredPrompt = null;
       })
     });
 
-    // console.log("event: ", e);
   });
 
+  //CHECK FOR APP INSTALLATIONS
   window.addEventListener('appinstalled', (e) =>{
-    // console.log("[INSTALL]: Success", );
-    gtag('event', 'app_install', {
-			'event_category': 'pwa',
-			'event_label': 'install',
-			'value': 'true'
-		});
+    // gtag('event', 'app_install', {
+		// 	'event_category': 'pwa',
+		// 	'event_label': 'install',
+		// 	'value': 'true'
+		// });
   });
 
+  //CHECKS FOR DISPLAY MODE
   if(navigator.standalone){
     displayMode = 'standalone-ios';
   }
@@ -63,13 +74,12 @@ document.addEventListener('DOMContentLoaded', event => {
     }
   })
 
-  // console.log("[DISPLAY_MODE]: ", displayMode);
-
-  gtag('event', 'display_mode', {
-    'event_category': 'pwa',
-    'event_label': 'display',
-    'value': displayMode
-  });
+  //SEND DISPLAY MODE DATA TO GA
+  // gtag('event', 'display_mode', {
+  //   'event_category': 'pwa',
+  //   'event_label': 'display',
+  //   'value': displayMode
+  // });
 
 
 });

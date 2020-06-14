@@ -48,7 +48,7 @@ button{background:none;border:none;}
 .skills_container .fig_caption{position: absolute;bottom:4px;left:0;padding:0;}
 .skills_container .fig_caption h4{color:#fff;background-color:#000a12;display:inline-block;padding:4px 8px;border-radius: 0px 5px 0px 0px;}
 
-.floating_button{position: absolute;left:0;bottom:13px;right:0;text-align: center;}
+.floating_button{text-align: center;}
 .fb_iframe_widget{bottom:3px;margin-right: 16px;}
 
 #main_footer{display: flex;flex-direction: row; justify-content: space-between;align-items: center;padding:0 16px;}
