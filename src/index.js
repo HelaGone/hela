@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', event => {
 
   const updateOnlineStatus = (event) => {
     let condition = navigator.onLine ? 'online' : 'offline';
-    console.log(condition);
+    //console.log(condition);
   }
 
   window.addEventListener('online', updateOnlineStatus);
@@ -35,17 +35,17 @@ document.addEventListener('DOMContentLoaded', event => {
       deferredPrompt.prompt();
       deferredPrompt.userChoice.then((choice) => {
         if(choice.outcome === 'accepted'){
-          // gtag('event', 'accepted', {
-          //   'event_category': 'pwa',
-          //   'event_label': 'accept',
-          //   'value': 'true'
-          // });
+          gtag('event', 'accepted', {
+            'event_category': 'pwa',
+            'event_label': 'accept',
+            'value': 'true'
+          });
         }else{
-          // gtag('event', 'dismissed', {
-          //   'event_category': 'pwa',
-          //   'event_label': 'dismiss',
-          //   'value': 'true'
-          // });
+          gtag('event', 'dismissed', {
+            'event_category': 'pwa',
+            'event_label': 'dismiss',
+            'value': 'true'
+          });
         }
         deferredPrompt = null;
       })
@@ -55,11 +55,11 @@ document.addEventListener('DOMContentLoaded', event => {
 
   //CHECK FOR APP INSTALLATIONS
   window.addEventListener('appinstalled', (e) =>{
-    // gtag('event', 'app_install', {
-		// 	'event_category': 'pwa',
-		// 	'event_label': 'install',
-		// 	'value': 'true'
-		// });
+    gtag('event', 'app_install', {
+			'event_category': 'pwa',
+			'event_label': 'install',
+			'value': 'true'
+		});
   });
 
   //CHECKS FOR DISPLAY MODE
@@ -77,11 +77,11 @@ document.addEventListener('DOMContentLoaded', event => {
   })
 
   //SEND DISPLAY MODE DATA TO GA
-  // gtag('event', 'display_mode', {
-  //   'event_category': 'pwa',
-  //   'event_label': 'display',
-  //   'value': displayMode
-  // });
+  gtag('event', 'display_mode', {
+    'event_category': 'pwa',
+    'event_label': 'display',
+    'value': displayMode
+  });
 
 
 });
