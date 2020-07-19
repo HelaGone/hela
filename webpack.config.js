@@ -3,9 +3,10 @@ const TerserJSPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: './src/index.js',
   devtool: 'inline-source-map',
   optimization: {
@@ -21,7 +22,15 @@ module.exports = {
   module: {
     rules: [{
       test: /\.css$/,
-      use: [MiniCssExtractPlugin.loader, 'css-loader']
+      use: [
+        {
+          loader: MiniCssExtractPlugin.loader,
+          options: {
+            hmr: 'production'
+          }
+        },
+        'css-loader'
+      ]
     }]
   },
   output: {
