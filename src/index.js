@@ -1,3 +1,5 @@
+import './style.css';
+
 document.addEventListener('DOMContentLoaded', event => {
   let displayMode = 'browser tab';
   let deferredPrompt;

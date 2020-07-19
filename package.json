@@ -2,12 +2,23 @@
   "name": "hela.dev",
   "version": "1.0.0",
   "description": "Personal Website",
-  "main": "src/index.js",
   "repository": "git@github.com:HelaGone/hela.git",
   "author": "HelaGone <luah613@gmail.com>",
+  "keywords": [
+    "Development, Webpack, Website"
+  ],
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "build": "webpack"
+  },
   "dependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.6.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "style-loader": "^1.2.1",
+    "terser-webpack-plugin": "^3.0.7",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.12"
   }
