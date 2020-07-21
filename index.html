@@ -50,13 +50,18 @@
 			'event_label': 'home',
 			'value': 'visit'
 		});
+
+		const handleMenuClick = ()=>{
+			let drawable_menu = document.getElementById('_main_menu');
+			drawable_menu.classList.toggle("show");
+		}
 	</script>
 </head>
 <header id="main_header">
 	<h1 id="main_title">
 		<a href="./" title="Hela development">HELA</a>
 	</h1>
-	<button id="menu_btn" type="button" name="button">
+	<button id="menu_btn" type="button" name="button" onclick="handleMenuClick()">
 		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
 			<path fill="none" d="M0 0h24v24H0V0z"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
 		</svg>
@@ -281,6 +286,24 @@
 			</a>
 		</li>
 	</ul>
+
+	<aside id="_main_menu"  class="main_menu">
+		<div class="main_menu_header">
+			<h2>HELA Development</h2>
+			<a href="/hela.dev/">
+				<img src="assets/icon/android-icon-48x48.png" width="48" height="48" alt="Hela development logo">
+			</a>
+		</div>
+		<nav class="navigation">
+			<ul class="nav_list">
+				<li class="nav_item">
+					<a href="/ouroboros" title="Ouroboros Project">
+						Ouróboros
+					</a>
+				</li>
+			</ul>
+		</nav>
+	</aside>
 
 	<script type="text/javascript" src="dist/bundle.js"></script>
 </footer>

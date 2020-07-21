@@ -15,7 +15,6 @@ ul{list-style: none;}
 h1, h2, h3{font-family:'Play', sans-serif;}
 button{background:none;border:none;}
 #main_header{height:60px;display: flex;flex-direction:row;justify-content: space-between;align-items: center;border-bottom: 2px solid #ff3508;padding:0 16px;}
-#main_header svg{fill:#ff3508;}
 #main_wrapper .top_section{position: relative;}
 
 .fig_object{width:100%;}
@@ -50,6 +49,17 @@ button{background:none;border:none;}
 
 .floating_button{text-align: center;}
 .fb_iframe_widget{bottom:3px;margin-right: 16px;}
+
+#menu_btn{z-index: 9;position: fixed;right:16px;outline: none;}
+#menu_btn svg{fill:#ff3508;}
+#menu_btn.switch_color{background-color: #000a12;border-radius: 5px;box-shadow: 1px 3px 8px rgba(0,0,0,0.3);}
+#menu_btn.switch_color svg{fill:#08ffa6;}
+.main_menu{position:absolute;right:0;top:62px;background-color:#ff3508;padding:0;width:0;max-width:30vw;box-shadow: 1px 4px 8px rgba(0,0,0,0.3);overflow: hidden;}
+.main_menu.show{width:30vw;padding:16px 8px;}
+.main_menu_header{margin-bottom:32px;display:flex;align-items: center; justify-content: flex-start;}
+.main_menu_header h2{margin-right: 24px;}
+.main_menu_header img{width: 48px; height: 48px;}
+.navigation .nav_item{font-size: 24px;border-bottom:2px solid white;display: inline-block;}
 
 #main_footer{display: flex;flex-direction: row; justify-content: space-between;align-items: center;padding:0 16px;}
 #footer_social_list li{display: inline-block;margin:0 8px;}

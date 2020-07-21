@@ -83,5 +83,45 @@ document.addEventListener('DOMContentLoaded', event => {
     'value': displayMode
   });
 
+  /*------------------------------------------------------------------------------------------
+                              ||| INTERSECTION OBSERVER |||
+  ------------------------------------------------------------------------------------------*/
+  const observed_header = document.getElementById('main_header');
+  const main_menu = document.getElementById('_main_menu');
+  const menu_button = document.getElementById('menu_btn');
+  let prevRatio = 0.0;
+
+  let options = {
+    root: null,
+    rootMargin:'0px',
+    threshold:[0]
+  };
+
+  let observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if(entry.intersectionRatio > prevRatio){
+        console.log("First",entry);
+        main_menu.style.position = 'absolute';
+        main_menu.style.top = '62px';
+
+        // menu_button.style.position ='absolute';
+        // menu_button.style.right ='16px';
+        menu_button.classList.remove("switch_color");
+      }else{
+        console.log("Second",entry);
+        main_menu.style.position = 'fixed';
+        main_menu.style.top = '0';
+
+        // menu_button.style.position ='fixed';
+        // menu_button.style.right ='16px';
+        menu_button.classList.add("switch_color");
+      }
+
+      prevRatio = entry.intersectionRatio;
+    });
+  }, options);
+
+  observer.observe(observed_header);
+
 
 });
