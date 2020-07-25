@@ -54,12 +54,12 @@ button{background:none;border:none;}
 #menu_btn svg{fill:#ff3508;}
 #menu_btn.switch_color{background-color: #000a12;border-radius: 5px;box-shadow: 1px 3px 8px rgba(0,0,0,0.3);}
 #menu_btn.switch_color svg{fill:#08ffa6;}
-.main_menu{position:absolute;right:0;top:62px;background-color:#ff3508;padding:0;width:0;max-width:30vw;box-shadow: 1px 4px 8px rgba(0,0,0,0.3);overflow: hidden;}
-.main_menu.show{width:30vw;padding:16px 8px;}
+.main_menu{position:absolute;right:0;top:62px;background-color:#ff3508;padding:0;width:0;box-shadow: 1px 4px 8px rgba(0,0,0,0.3);overflow: hidden;border-radius: 0 0 0 20px;}
+.main_menu.show{width:52vw;padding:16px 8px;}
 .main_menu_header{margin-bottom:32px;display:flex;align-items: center; justify-content: flex-start;}
 .main_menu_header h2{margin-right: 24px;}
 .main_menu_header img{width: 48px; height: 48px;}
-.navigation .nav_item{font-size: 24px;border-bottom:2px solid white;display: inline-block;}
+.navigation .nav_item{font-size: 20px;border-bottom:2px solid white;display: inline-block;}
 
 #main_footer{display: flex;flex-direction: row; justify-content: space-between;align-items: center;padding:0 16px;}
 #footer_social_list li{display: inline-block;margin:0 8px;}

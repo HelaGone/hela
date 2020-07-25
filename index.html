@@ -33,10 +33,10 @@
 	<link rel="icon" type="image/png" sizes="96x96" href="assets/icon/favicon-96x96.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="assets/icon/favicon-16x16.png">
 	<link rel="manifest" href="manifest.json">
-	<link rel="stylesheet" href="dist/main.css">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Play:700|Ubuntu+Condensed&display=swap/">
+	<link rel="preload stylesheet" as="style" href="dist/main.css">
+	<link rel="preload stylesheet" as="style" href="https://fonts.googleapis.com/css?family=Play:700|Ubuntu+Condensed&display=swap/" crossorigin>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91771961-10"></script> -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-91771961-10"></script>
 	<script>
 	  window.dataLayer = window.dataLayer || [];
 	  function gtag(){
@@ -54,6 +54,11 @@
 		const handleMenuClick = ()=>{
 			let drawable_menu = document.getElementById('_main_menu');
 			drawable_menu.classList.toggle("show");
+			gtag('event', 'menu_click',{
+				'event_category':'engagement',
+				'event_label':'navigation',
+				'value':'menu interaction'
+			});
 		}
 	</script>
 </head>
@@ -289,9 +294,9 @@
 
 	<aside id="_main_menu"  class="main_menu">
 		<div class="main_menu_header">
-			<h2>HELA Development</h2>
 			<a href="/hela.dev/">
-				<img src="assets/icon/android-icon-48x48.png" width="48" height="48" alt="Hela development logo">
+				<h2>HELA|dev</h2>
+				<!-- <img src="assets/icon/android-icon-48x48.png" width="48" height="48" alt="Hela development logo"> -->
 			</a>
 		</div>
 		<nav class="navigation">
