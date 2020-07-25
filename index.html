@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>HELA | Web Development</title>
@@ -33,7 +33,9 @@
 	<link rel="icon" type="image/png" sizes="96x96" href="assets/icon/favicon-96x96.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="assets/icon/favicon-16x16.png">
 	<link rel="manifest" href="manifest.json">
-	<link rel="preload" href="https://fonts.googleapis.com/css?family=Play:700|Ubuntu+Condensed&display=swap/" as="style" crossorigin>
+	<link rel="preconnect" href="https://storage.googleapis.com">
+	<link rel="preconnect" href="https://www.google-analytics.com">
+	<link rel="preload stylesheet" href="https://fonts.googleapis.com/css?family=Play:700|Ubuntu+Condensed&display=swap/" as="style" crossorigin>
 	<link rel="preload stylesheet" as="style" href="dist/main.css">
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-91771961-10"></script>
@@ -61,12 +63,29 @@
 			});
 		}
 	</script>
+
+	<script type="application/ld+json">
+		{
+			"@context": "http://schema.org",
+			"@type": "WebSite",
+			"url": "https://hela.dev/",
+			"name": "Hela Development",
+			"keywords":"Web, Development, Web development, Web Design, Design, DevOps, Services, Software",
+			"author":{
+				"@type":"Person",
+				"name":"Holkan Luna",
+				"email":"hela@hela.dev"
+				"sameAs":"https://twitter.com/helagone",
+				"sameAs":"https://twitter.com/DevHolkan"
+			},
+		}
+	</script>
 </head>
 <header id="main_header">
 	<h1 id="main_title">
 		<a href="./" title="Hela development">HELA</a>
 	</h1>
-	<button id="menu_btn" type="button" name="button" onclick="handleMenuClick()">
+	<button id="menu_btn" type="button" name="button" onclick="handleMenuClick()" aria-label="Menu Button">
 		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
 			<path fill="none" d="M0 0h24v24H0V0z"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
 		</svg>
@@ -105,8 +124,17 @@
 
 
 			<div class="floating_button">
-				<div class="fb-share-button" data-href="https://hela.dev" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fhela.dev%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
-				<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+				<div class="social-btn-container fb-share-button" data-href="https://hela.dev" data-layout="button" data-size="large">
+					<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fhela.dev%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">
+						Share
+					</a>
+				</div>
+				<div class="social-btn-container">
+					<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-show-count="false">
+						Tweet
+					</a>
+					<script rel="preload" as="script" async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+				</div>
 			</div>
 		</section>
 		<section class="section middle_section">

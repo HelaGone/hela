@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', event => {
   let displayMode = 'browser tab';
   let deferredPrompt;
   let btnDownload = document.getElementById('btn_download');
-  btnDownload.style.display = 'none';
+  btnDownload.style.visibility = 'hidden';
 
   //INSTALL SERVICE WORKER
   if('serviceWorker' in navigator){
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', event => {
     e.preventDefault();
     deferredPrompt = e;
 
-    btnDownload.style.display = 'inline-block';
+    btnDownload.style.visibility = 'visible';
 
     btnDownload.addEventListener('click', (e) => {
       //hide button

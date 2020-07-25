@@ -47,8 +47,9 @@ button{background:none;border:none;}
 .skills_container .fig_caption{position: absolute;bottom:4px;left:0;padding:0;}
 .skills_container .fig_caption h4{color:#fff;background-color:#000a12;display:inline-block;padding:4px 8px;border-radius: 0px 5px 0px 0px;}
 
-.floating_button{text-align: center;}
-.fb_iframe_widget{bottom:3px;margin-right: 16px;}
+.floating_button{display:flex;justify-content: center; text-align: center;min-height: 32px;}
+.social-btn-container{min-width: 79px;min-height: 33px;margin:0 8px;}
+/* .fb_iframe_widget{bottom:3px;margin-right: 16px;} */
 
 #menu_btn{z-index: 9;position: fixed;right:16px;outline: none;width:32px;height: 32px;}
 #menu_btn svg{fill:#ff3508;transition: fill .33s;}
