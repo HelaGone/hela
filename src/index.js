@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', event => {
   let observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if(entry.intersectionRatio > prevRatio){
-        console.log("First",entry);
+        // console.log("First",entry);
         main_menu.style.position = 'absolute';
         main_menu.style.top = '62px';
 
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', event => {
         // menu_button.style.right ='16px';
         menu_button.classList.remove("switch_color");
       }else{
-        console.log("Second",entry);
+        // console.log("Second",entry);
         main_menu.style.position = 'fixed';
         main_menu.style.top = '0';
 
