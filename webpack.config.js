@@ -8,7 +8,7 @@ const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
   mode: 'production',
-  entry: './src/index.js',
+  entry: './src/mainapp.js',
   devtool: 'inline-source-map',
   optimization: {
     minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})]

@@ -108,22 +108,26 @@
 		}
 	</script>
 </head>
-<header id="main_header">
-	<h1 id="main_title">
-		<a href="./" title="Hela development">HELA</a>
-	</h1>
-	<button id="menu_btn" type="button" name="button" onclick="handleMenuClick()" aria-label="Menu Button">
-		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-			<path fill="none" d="M0 0h24v24H0V0z"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
-		</svg>
-	</button>
-</header>
+
 <body id="main_body">
 	<div id="fb-root"></div>
 	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0&appId=318589499111475&autoLogAppEvents=1"></script>
 
+	<main id="webapp"><!-- here the app is rendered --></main>
+
+	<header id="main_header">
+		<h1 id="main_title">
+			<a href="./" title="Hela development">HELA</a>
+		</h1>
+		<button id="menu_btn" type="button" name="button" onclick="handleMenuClick()" aria-label="Menu Button">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+				<path fill="none" d="M0 0h24v24H0V0z"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+			</svg>
+		</button>
+	</header>
+
 	<section id="main_wrapper">
-		<section class="section top_section">
+		<div class="section top_section">
 			<figure class="fig_object">
 				<img src="assets/cymatic.jpg" alt="Profile Icon">
 				<figcaption class="fig_caption">
@@ -163,7 +167,7 @@
 					<script rel="preload" as="script" async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 				</div>
 			</div>
-		</section>
+		</div>
 		<section class="section middle_section">
 			<div class="inner_wrapper">
 				<h2 class="section_title">WEBSITES</h2>
