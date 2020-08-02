@@ -3,6 +3,17 @@
 ## hela.dev
 
 - Todos los cambios realizados al código de hela.dev se anotan en este CHANGELOG
+
+## [Released]
+## [2020-08-02]
+
+### Changed
+- Se cambió a un nuevo branch para iniciar la refactorización del sitio a ReactJS
+
+### Added
+- Se añadieron más datos a los datos estructurados
+- Se añadieron las librerías para React
+
 ## [Released]
 ## [2020-07-25]
 ### Added
