@@ -2,7 +2,7 @@ importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox
 
 if (workbox) {
 
-	workbox.precaching.precacheAndRoute([{"revision":"28847615b583dcb06e69be54eb408afc","url":"dist/bundle.js"},{"revision":"296e31a586b5e21b64055ca41fb5e920","url":"dist/main.css"}]);//End precache
+	workbox.precaching.precacheAndRoute([{"revision":"b6d99193ad6de161f5b877740e9e9bb0","url":"dist/bundle.js"},{"revision":"bd2b8dbcea07acb647dee34fb64204ba","url":"dist/main.css"}]);//End precache
 
 	workbox.googleAnalytics.initialize({
 		parameterOverrides: {
