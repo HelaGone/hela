@@ -1,7 +1,7 @@
 import './style.css';
 
 document.addEventListener('DOMContentLoaded', event => {
-  let displayMode = 'browser tab';
+  let displayMode = 'browser';
   let deferredPrompt;
   let btnDownload = document.getElementById('btn_download');
   btnDownload.style.visibility = 'hidden';
@@ -63,25 +63,12 @@ document.addEventListener('DOMContentLoaded', event => {
   });
 
   //CHECKS FOR DISPLAY MODE
-  if(navigator.standalone){
-    displayMode = 'standalone-ios';
-  }
-  if(window.matchMedia('(display-mode: standalone)').matches){
+  const isStandAlone = '(display-mode: standalone)';
+  if(navigator.standalone || window.matchMedia(isStandAlone).matches){
     displayMode = 'standalone';
   }
-
-  window.matchMedia('(display-mode: standalone)').addListener((e) => {
-    if(e.matches){
-      displayMode = 'standalone';
-    }
-  })
-
-  //SEND DISPLAY MODE DATA TO GA
-  gtag('event', 'display_mode', {
-    'event_category': 'pwa',
-    'event_label': 'display',
-    'value': displayMode
-  });
+  //SEND DISPLAY MODE AS DIMENTION
+  gtag('set', 'dimension2', displayMode);
 
   /*------------------------------------------------------------------------------------------
                               ||| INTERSECTION OBSERVER |||

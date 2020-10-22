@@ -41,7 +41,7 @@ button{background:none;border:none;}
 
 .bottom_section{background-color:#08ffa6;}
 .bottom_section .section_title{color:#000a12;}
-.skills_head{padding:16px 8px;background-color:#bdffe6;color:#000a12;box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.3); }
+.skills_head{padding:16px 8px;color:#000a12;}
 .skills_container{display: flex;flex-direction: row;flex-wrap: wrap;margin-bottom:30px;}
 .skills_container .fig_object{width:calc(100% / 2);position: relative;}
 .skills_container .fig_caption{position: absolute;bottom:4px;left:0;padding:0;}
@@ -66,6 +66,8 @@ button{background:none;border:none;}
 .add_to_hs_banner button{color:#ff3508;outline:none;}
 .add_to_hs_banner button span{position:relative;bottom:8px; }
 
+.btn_download{cursor: pointer;}
+
 #main_footer{display: flex;flex-direction: row; justify-content: space-between;align-items: center;padding:0 16px;}
 #footer_social_list li{display: inline-block;margin:0 8px;}
 
@@ -75,7 +77,7 @@ button{background:none;border:none;}
 }
 
 @media only screen and (min-width:480px){
-  .skills_head{margin-bottom:32px;display: inline-block;border-radius: 0px 10px 10px 0px;}
+  .skills_head{margin-bottom:32px;display: inline-block;}
   .skills_container{justify-content:space-around;}
   .skills_container .fig_object{width:calc(100% / 2 - 16px);display: flex;flex-direction: row; justify-content: flex-start; align-items: center;background-color:#000a12;margin-bottom:8px;border-radius:5px;overflow: hidden;}
   .skills_container .fig_object img{ max-width:90px;height: auto;}
